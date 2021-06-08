@@ -30,8 +30,7 @@ namespace PRS_Server.Controllers
                             where l.RequestId == requestid
                             select new { LineTotal = l.Quantity * p.Price }).Sum(x => x.LineTotal);
             req.Total = reqtotal;
-            await _context.SaveChangesAsync();       
-        
+            await _context.SaveChangesAsync();
         }
         // GET: api/RequestLines
         [HttpGet]

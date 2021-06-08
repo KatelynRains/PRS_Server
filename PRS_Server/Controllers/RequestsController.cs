@@ -57,14 +57,12 @@ namespace PRS_Server.Controllers
                                  .Where(x => x.Status == "REVIEW" && x.UserId != userid)
                                  .ToListAsync();
         }
-
         // GET: api/Requests
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Request>>> GetRequests()
         {
             return await _context.Requests.ToListAsync();
         }
-
         // GET: api/Requests/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Request>> GetRequest(int id)
@@ -78,7 +76,6 @@ namespace PRS_Server.Controllers
 
             return request;
         }
-
         // PUT: api/Requests/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
